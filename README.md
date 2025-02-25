@@ -5,10 +5,12 @@ Um site para o aprimoramento na digitação com base em letras de músicas
 
 ## Funcionalidades
 - Buscar letras
-- Treino de digitação com musica
-- Score mundial
+- Treino de digitação com música
+- Ranking de usúarios
+
 ## Como acessar
 Link do nosso projeto: [clique aqui](linkdoprojeto)
+
 ## Nosso objetivo
 Ajudar as pessoas a melhorarem sua digitação de forma divertida
 
