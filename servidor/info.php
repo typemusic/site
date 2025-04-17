@@ -1,8 +1,9 @@
 <?php
+$config = require 'config.php';
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-$token = '3mLirxgaipD2_5WRxEzd3LxX44gMER3ZFW9Sjm8pw9fKJT2p0hLUshAujAh11I6j'; // Substitua com seu token real da Genius
+$token = $config['token'];
 $song_id = isset($_GET['id']) ? $_GET['id'] : null;
 
 if (!$song_id) {
