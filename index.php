@@ -1,52 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Embed Genius com PHP</title>
+  <meta charset="UTF-8">
+  <title>Letra via API Genius</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php include('navbar.php'); ?>
 
-<form method="POST" action="">
-    <label for="song_id">Digite o ID da música (Genius):</label>
-    <input type="text" id="song_id" name="song_id" placeholder="Ex: 11718636">
-    <button type="submit">Gerar Embed</button>
+<h1>Busca de Música + Letra (Genius API)</h1>
+
+<form method="GET" action="">
+  <label for="song_id">Digite o ID da música (Genius):</label>
+  <input type="text" id="song_id" name="id" placeholder="Ex: 10521931" required>
+  <select name="type">
+    <option value="full">Full (com [partes] e quebras)</option>
+    <option value="clear">Clear (sem [partes], formatado)</option>
+  </select>
+  <button type="submit">Buscar</button>
 </form>
 
+<?php if (isset($_GET['id'])): ?>
+  <div class="music-info" id="song-data">
+    <h2>Informações da música</h2>
+    <p>Carregando dados...</p>
+  </div>
 
-<button onclick="getLyrics()">Mostrar Letra</button>
+  <div id="lyrics">
+    <h2>Letra da Música</h2>
+    <p>Carregando letra...</p>
+  </div>
 
-<div id="result"></div>
+  <script>
+    const id = "<?php echo $_GET['id']; ?>";
+    const type = "<?php echo $_GET['type'] ?? 'full'; ?>";
 
-<script>
-    // Função para extrair o texto das letras
-    function getLyrics() {
-        // Seleciona o elemento que contém as letras
-        var embedContent = document.querySelector(".rg_embed_body");
+    // Letra via sua API
+    fetch(`http://localhost/genius/servidor/letra.php?id=${id}&type=${type}`)
+      .then(res => res.text())
+      .then(text => {
+        document.getElementById("lyrics").innerHTML = `<pre>${text}</pre>`;
+      });
 
-        // Remove as tags <a> e mantém as quebras de linha <br>
-        var cleanedContent = embedContent.innerHTML.replace(/<a[^>]*>(.*?)<\/a>/g, '$1'); // Remove as tags <a> e mantém o texto dentro delas
-        cleanedContent = cleanedContent.replace(/<\/?a[^>]*>/g, ''); // Remover qualquer tag <a> restante
-
-        // Exibe o conteúdo sem as tags <a>, mas mantendo as quebras de linha
-        document.getElementById("result").innerHTML = cleanedContent;
-    }
-</script>
-
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Pegando o ID digitado pelo usuário e sanitizando
-    $song_id = htmlspecialchars($_POST['song_id']);
-
-    // Gerando o código com o ID inserido
-    echo '
-    <div id="rg_embed_link_' . $song_id . '" class="rg_embed_link" data-song-id="' . $song_id . '">
-        <script src="//genius.com/songs/' . $song_id . '/embed.js" crossorigin=""></script>
-    </div>';
-}
-?>
-
-
+    // Dados da música via Genius API (separado)
+    fetch(`http://localhost/genius/servidor/info.php?id=${id}`)
+      .then(res => res.json())
+      .then(data => {
+        const song = data.response.song;
+        const infoDiv = document.getElementById('song-data');
+        infoDiv.innerHTML = `
+          <img src='${song.song_art_image_url}' class='cover' alt='Capa da música'>
+          <h2><a href='${song.url}' target='_blank'>${song.title}</a></h2>
+          <h3><a href='${song.primary_artist.url}' target='_blank'>${song.primary_artist.name}</a></h3>
+          <h4>Idioma: ${song.language}</h4>
+        `;
+      });
+  </script>
+<?php endif; ?>
 
 </body>
 </html>

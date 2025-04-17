@@ -1,0 +1,121 @@
+/* Estilos da Navbar */
+nav {
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+
+/* Music: */
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  .music-info {
+    margin-top: 20px;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .cover {
+    width: 100%;
+    border-radius: 8px;
+  }
+  a.button {
+    display: inline-block;
+    margin-bottom: 20px;
+    background: #eee;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+  }
+  #lyrics {
+    white-space: pre-line; /* Mantém a quebra de linha do texto, mas pode controlar as quebras no texto */
+    line-height: 1.6; /* Ajusta o espaçamento entre as linhas de forma que não fique exagerado */
+    word-wrap: break-word; /* Garante que palavras longas não quebrem a formatação */
+    font-family: 'Courier New', monospace; /* Definir uma fonte de largura fixa pode ajudar na exibição */
+  }
+
+  /* Busca: */
+  body { font-family: sans-serif; padding: 20px; }
+  form { margin-bottom: 20px; }
+  .result-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .card {
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .card h3 {
+    font-size: 1em;
+    margin: 10px 0 5px;
+  }
+  .card p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Index: */
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  .music-info {
+    margin-top: 20px;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  .cover {
+    width: 100%;
+    border-radius: 8px;
+  }
