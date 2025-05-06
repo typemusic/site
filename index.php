@@ -15,6 +15,7 @@
   <input type="text" id="song_id" name="id" placeholder="Ex: 10521931" required>
   <select name="type">
     <option value="full">Full (com [partes] e quebras)</option>
+    <option value="line">Line (Sem [partes] e quebras)</option>
     <option value="clear">Clear (sem [partes], formatado)</option>
   </select>
   <button type="submit">Buscar</button>

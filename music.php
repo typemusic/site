@@ -20,6 +20,12 @@ $song_id = isset($_GET['id']) ? htmlspecialchars($_GET['id']) : null;
   <!-- Exibe a letra da música -->
   <div id="lyrics">Carregando letra...</div>
 
+  <?php if ($song_id): ?>
+    <a href="treino.php?id=<?= $song_id ?>" style="display: inline-block; padding: 10px 20px; background: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+        Iniciar Treino de Digitação
+    </a>
+<?php endif; ?>
+
   <script>
     // Primeiro, buscar os dados da música (nome, capa, artista...)
     fetch('http://localhost/genius/servidor/info.php?id=<?php echo $song_id; ?>')
