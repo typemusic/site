@@ -1,52 +1,95 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Embed Genius com PHP</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeMusic</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
 </head>
+
 <body>
+  <?php include "include/menu.php"; ?>
+  <?php include "include/searchBar.php"; ?>
 
-<form method="POST" action="">
-    <label for="song_id">Digite o ID da música (Genius):</label>
-    <input type="text" id="song_id" name="song_id" placeholder="Ex: 11718636">
-    <button type="submit">Gerar Embed</button>
-</form>
+  <section>
+    <h3>Recomendadas</h3>
+    <div class="carousel-container">
+      <button class="btn prev">&#10094;</button>
+      <div class="carousel" id="carousel-recomendadas">
+        <!-- As músicas recomendadas serão carregadas aqui -->
+      </div>
+      <button class="btn next">&#10095;</button>
+    </div>
 
+    <h3>Mais Ouvidas</h3>
+    <div class="carousel-container">
+      <button class="btn prev">&#10094;</button>
+      <div class="carousel" id="carousel-mais-ouvidas">
+        <!-- As músicas mais ouvidas serão carregadas aqui -->
+      </div>
+      <button class="btn next">&#10095;</button>
+    </div>
 
-<button onclick="getLyrics()">Mostrar Letra</button>
+    <h3>Mais Treinadas</h3>
+    <div class="carousel-container">
+      <button class="btn prev">&#10094;</button>
+      <div class="carousel" id="carousel-mais-treinadas">
+        <!-- As músicas mais treinadas serão carregadas aqui -->
+      </div>
+      <button class="btn next">&#10095;</button>
+    </div>
+  </section>
 
-<div id="result"></div>
+  <script>
+    async function buscarMusicas(listaIds, containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
 
-<script>
-    // Função para extrair o texto das letras
-    function getLyrics() {
-        // Seleciona o elemento que contém as letras
-        var embedContent = document.querySelector(".rg_embed_body");
+      container.innerHTML = ''; // Limpa o container antes de adicionar novas músicas
 
-        // Remove as tags <a> e mantém as quebras de linha <br>
-        var cleanedContent = embedContent.innerHTML.replace(/<a[^>]*>(.*?)<\/a>/g, '$1'); // Remove as tags <a> e mantém o texto dentro delas
-        cleanedContent = cleanedContent.replace(/<\/?a[^>]*>/g, ''); // Remover qualquer tag <a> restante
+      for (const { id } of listaIds) {
+        try {
+          const res = await fetch(`http://localhost/genius/servidor/info.php?id=${id}`);
+          const data = await res.json();
 
-        // Exibe o conteúdo sem as tags <a>, mas mantendo as quebras de linha
-        document.getElementById("result").innerHTML = cleanedContent;
+          if (!data?.response?.song) continue;
+
+          const song = data.response.song;
+          const title = song.title;
+          const artist = song.primary_artist.name;
+          const image = song.song_art_image_thumbnail_url || 'img/capaMusic.png';
+
+          const card = document.createElement('a');
+          card.href = `musicplayer.php?id=${id}`;
+          card.innerHTML = `
+            <div class="music-card">
+              <img src="${image}" alt="Capa da música" />
+              <p class="title">${title}</p>
+              <p class="artist">${artist}</p>
+            </div>
+          `;
+          container.appendChild(card);
+        } catch (err) {
+          console.error(`Erro ao carregar música com ID ${id}:`, err);
+        }
+      }
     }
-</script>
 
+    // Carrega as músicas ao carregar a página
+    fetch('musicas.json')
+      .then(res => res.json())
+      .then(data => {
+        buscarMusicas(data.recomendadas, 'carousel-recomendadas');
+        buscarMusicas(data.mais_ouvidas, 'carousel-mais-ouvidas');
+        buscarMusicas(data.mais_treinadas, 'carousel-mais-treinadas');
+      })
+      .catch(err => console.error('Erro ao carregar o JSON de músicas:', err));
+  </script>
 
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Pegando o ID digitado pelo usuário e sanitizando
-    $song_id = htmlspecialchars($_POST['song_id']);
-
-    // Gerando o código com o ID inserido
-    echo '
-    <div id="rg_embed_link_' . $song_id . '" class="rg_embed_link" data-song-id="' . $song_id . '">
-        <script src="//genius.com/songs/' . $song_id . '/embed.js" crossorigin=""></script>
-    </div>';
-}
-?>
-
-
-
+  <?php include "include/footer.php"; ?>
 </body>
+<script src="js/index.js"></script>
+
 </html>
