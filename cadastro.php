@@ -14,12 +14,11 @@
 
     <?php
     include('include/menu.php');
-    include('include/searchbar.php');
     ?>
 
-    <div class="container">
+    <div class="container-cadastro">
         <div class="lado-esquerdo"></div>
-        <div class="container-cadastro">
+        <div class="container-formulario">
             <form action="servidor/criaUsuario.php" method="POST">
                 <div class="inputBox">
                     <label for="nome"> Nome </label>
