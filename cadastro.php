@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<?php
-include('includes/navbar.php');
-include('includes/searchbar.php');
-?>
+
 
 <body>
+
+    <?php
+    include('includes/menu.php');
+    include('includes/searchbar.php');
+    ?>
+
     <div class="container">
         <div class="lado-esquerdo"></div>
         <div class="container-cadastro">
