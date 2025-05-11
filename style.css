@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(135deg, #6A11CB, #2575FC);
+    background: linear-gradient(135deg, #c5b4ff, #AAAFB9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,8 +30,8 @@ body {
 }
 
 #submit {
-    background-color: #6A11CB;
-    color: white;
+    background-color: #c5b4ff;
+    color: #f8f8f8;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -40,6 +40,4 @@ body {
     transition: 0.3s;
 }
 
-#submit:hover {
-    background-color: #2575FC;
-}
+
