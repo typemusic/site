@@ -8,11 +8,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
+
 <body>
+
+    <?php
+    include('include/menu.php');
+    include('include/searchbar.php');
+    ?>
+
     <div class="container">
-    <div class="lado-esquerdo"></div>
+        <div class="lado-esquerdo"></div>
         <div class="container-cadastro">
-            <form action="">
+            <form action="servidor/criaUsuario.php" method="POST">
                 <div class="inputBox">
                     <label for="nome"> Nome </label>
                     <input type="text" name="nome" id="nome" class="inputUsuario" required>
