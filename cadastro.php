@@ -13,8 +13,8 @@
 <body>
 
     <?php
-    include('includes/menu.php');
-    include('includes/searchbar.php');
+    include('include/menu.php');
+    include('include/searchbar.php');
     ?>
 
     <div class="container">
