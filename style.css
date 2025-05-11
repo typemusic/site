@@ -1,4 +1,4 @@
-body {
+.container-cadastro {
     background: linear-gradient(135deg, #c5b4ff, #AAAFB9);
     display: flex;
     justify-content: center;
@@ -7,7 +7,7 @@ body {
     margin: 0;
 }
 
-.container-cadastro {
+.container-formulario {
     background: white;
     border-radius: 12px;
     padding: 40px;
