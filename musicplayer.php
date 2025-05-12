@@ -24,10 +24,14 @@ $song_id = isset($_GET['id']) ? htmlspecialchars($_GET['id']) : null;
       <div class="song-info" id="song-info">
         Carregando informações...
       </div>
+      <br>
+      <div id="id-music">oiii</div>
     </main>
+    
+
     <script>
       //buscar os dados da música (nome, capa, artista...)
-      fetch('http://typemusic.hubsapiens.com.br/servidor/info.php?id=<?php echo $song_id; ?>')
+      fetch('https://typemusic.hubsapiens.com.br/servidor/info.php?id=<?php echo $song_id; ?>')
         .then(res => res.json())
         .then(data => {
           const song = data.response.song;
@@ -41,7 +45,7 @@ $song_id = isset($_GET['id']) ? htmlspecialchars($_GET['id']) : null;
         `;
 
           // buscar a letra completa com quebras e blocos
-          fetch(`http://typemusic.hubsapiens.com.br/servidor/letra.php?id=${song.id}&type=full`)
+          fetch(`https://typemusic.hubsapiens.com.br/servidor/letra.php?id=${song.id}&type=full`)
             .then(res => res.text())
             .then(lyrics => {
               document.getElementById("lyrics").innerHTML = lyrics;

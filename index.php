@@ -51,7 +51,7 @@
 
       for (const { id } of listaIds) {
         try {
-          const res = await fetch(`http://typemusic.hubsapiens.com.br/servidor/info.php?id=${id}`);
+          const res = await fetch(`https://typemusic.hubsapiens.com.br/servidor/info.php?id=${id}`);
           const data = await res.json();
 
           if (!data?.response?.song) continue;
