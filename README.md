@@ -9,7 +9,7 @@ Um site para o aprimoramento na digitação com base em letras de músicas
 - Ranking de usúarios
 
 ## Como acessar
-Link do nosso projeto: [clique aqui](linkdoprojeto)
+Link do nosso projeto: [clique aqui](typemusic.hubsapiens.com.br)
 
 ## Nosso objetivo
 Ajudar as pessoas a melhorarem sua digitação de forma divertida
