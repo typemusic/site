@@ -25,8 +25,9 @@ $song_id = isset($_GET['id']) ? htmlspecialchars($_GET['id']) : null;
         Carregando informações...
       </div>
       <br>
-      <div id="id-music">oiii</div>
+      <div id="id-music">ID</div>
     </main>
+    
     
 
     <script>
@@ -60,6 +61,8 @@ $song_id = isset($_GET['id']) ? htmlspecialchars($_GET['id']) : null;
           console.error('Erro ao buscar dados da música:', err);
           document.getElementById("song-data").innerText = "Erro ao carregar os dados da música.";
         });
+
+        document.getElementById("id-music").innerText = <?php echo $song_id; ?>;
     </script>
 
   <?php else: ?>
