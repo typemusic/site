@@ -1,6 +1,8 @@
 <?php
 
-include('connect.php');
+
+include 'config.php';
+
 
 // Para capturar os dados do formulário
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -18,22 +20,14 @@ if($senha !== $confirmarSenha){
     exit();
 }
 
-// O hash serve pra não armazenar a senha bruta
-$senhaCriptografada = password_hash($senha, PASSWORD_DEFAULT);
+$sql = "INSERT INTO usuarios (nome, email, dataNascimento, senha, sexo)";
 
-// Isso vai preparar a inserção no banco
-$stmt = $conn->prepare("INSERT INTO tblUsuario (usrNome, usrEmail, usrDn, usrSenha, usrGenero) VALUES (?, ?, ? , ?, ?)");
-$stmt->bind_param("sssss", $nome, $email, $dataNascimento, $senhaCriptografada, $sexo);
-
-// Executar a inserção e também ver se ela deu certo
-if($stmt-> execute()) {
-    echo " Usuário cadastrado com sucesso" . $stmt->error;
+if ($conn->query($sql) === TRUE) {
+    echo "Usuário criado com sucesso!";
 } else {
-    echo "Erro ao cadastrar";
+    echo "Erro: " . $conn->error;
 }
 
-// Fecha a conexão
-$stmt->close();
 $conn->close();
 
-?>
+?>  
