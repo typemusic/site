@@ -20,7 +20,7 @@ if($senha !== $confirmarSenha){
     exit();
 }
 
-$sql = "INSERT INTO tblUsuario (usrNome, usrEmail, usrDn, usrSenha, usrGenero)";
+$sql = "INSERT INTO tblUsuario (usrNome, usrEmail, usrDn, usrSenha, usrGenero) VALUES ( '$nome' , '$email' , '$dataNascimento' , '$confirmarSenha' , '$sexo')" ;
 
 if ($conn->query($sql) === TRUE) {
     echo "Usuário criado com sucesso!";
