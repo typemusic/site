@@ -50,9 +50,9 @@
                 <br>
 
                 <p>Sexo</p>
-                <input type="radio" id="Masculino" name="sexo" value="Masculino" required>
+                <input type="radio" id="Masculino" name="sexo" value="1" required>
                 <label for="Masculino"> Masculino </label>
-                <input type="radio" id="Feminino" name="sexo" value="Feminino" required>
+                <input type="radio" id="Feminino" name="sexo" value="2" required>
                 <label for="Feminino"> Feminino </label>
 
                 <br>
