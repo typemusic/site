@@ -49,6 +49,19 @@
                 </div>
                 <br>
 
+                <P> País </P>
+                <select name="pais" id="pais" class="inputUsuario"  required > País 
+                <option value="">Selecione...</option>
+                <?php
+                include('servidor/config.php');
+                $result = $conn->query("SELECT IDpaises, pasNome FROM tblPaises ORDER BY pasNome ASC");
+                while($row = $result->fetch_assoc()){
+                    echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
+                }
+                ?>
+                </select>
+                   
+
                 <p>Sexo</p>
                 <input type="radio" id="Masculino" name="sexo" value="1" required>
                 <label for="Masculino"> Masculino </label>
