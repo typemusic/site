@@ -11,9 +11,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $dataNascimento = $_POST['dataNascimento'];
     $senha = $_POST['senha'];
     $confirmarSenha = $_POST['confirmarSenha'];
-    $pais = $_POST['pais'];
     $sexo = $_POST['sexo'];
 }
+
+
+// Hash
+$senha_hash = password_hash($confirmarSenha, PASSWORD_BCRYPT);
 
 // Para confirmar se as senhas batem
 if($senha !== $confirmarSenha){
@@ -21,7 +24,7 @@ if($senha !== $confirmarSenha){
     exit();
 }
 
-$sql = "INSERT INTO tblUsuario (usrNome, usrEmail, usrDn, usrSenha, usrGenero, usrPais) VALUES ( '$nome' , '$email' , '$dataNascimento' , '$confirmarSenha' , '$sexo' , '$pais')" ;
+$sql = "INSERT INTO tblUsuario (usrNome, usrEmail, usrDn, usrSenha, usrGenero) VALUES ( '$nome' , '$email' , '$dataNascimento' , '$senha_hash' , '$sexo')" ;
 
 if ($conn->query($sql) === TRUE) {
     echo "Usuário criado com sucesso!";
