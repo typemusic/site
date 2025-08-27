@@ -48,10 +48,6 @@
                     <input type="password" name="confirmarSenha" id="confirmarSenha" class="inputUsuario" required>
                 </div>
 
-                <?php
-                require('servidor/paises.php');
-                ?>
-
 
                 <br>
                 <p>Sexo</p>
