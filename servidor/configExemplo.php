@@ -1,13 +1,19 @@
 <?php
 
-define('DB_HOST', 'hostname');
-define('DB_USER', 'usrname');
-define('DB_PASS', 'senha');
-define('DB_NAME', 'nome');
+function novaConexao()
+{
 
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+    $hostname = "host";
+    $dbname = "nome";
+    $username = "usuario";
+    $pass = "senha";
 
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
+    try {
+    $conn = new PDO("mysql:host=$hostname;dbname=$dbname;charset=utf8", $username, $pass);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    return $conn; 
+} catch (PDOException $e) {
+    die("Erro de conexão: " . $e->getMessage());
+    }
 }
 ?>
