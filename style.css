@@ -503,6 +503,16 @@ a {
   font-size: 16px;
 }
 
+.sexo-options {
+  .sexo-options {
+  display: flex;
+  gap: 20px; 
+  justify-content: flex-start;
+  align-items: center;
+}
+
+}
+
 #submit {
   background-color: #c5b4ff;
   color: #f8f8f8;
