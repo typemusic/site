@@ -25,9 +25,18 @@ try {
     $stmt->bindValue(':g', $dados['sexo']);
     $stmt->execute();
 
+    $_SESSION['usuario'] = [
+        'id' => $conexao->lastInsertId(),
+        'nome' => $dados['nome'],
+        'email' => $dados['email']
+    ];
+
+
     $_SESSION['sucesso'] = "Cadastro realizado com sucesso";
 
-    // Redireciona para o index
+
+
+
     header("Location: ../index.php");
     exit();
 } catch (PDOException $e) {
