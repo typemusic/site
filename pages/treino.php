@@ -52,7 +52,7 @@ $music = isset($_GET['music']) ? htmlspecialchars($_GET['music']) : null;
         </div>
 </body>
 <script src="../js/treino.js"></script>
-
+<script src="js/theme.js"></script>
 </html>
 
 <?php
@@ -69,7 +69,4 @@ echo '
     <div id="rg_embed_link_' . $music . '" class="rg_embed_link" data-song-id="' . $music . '">
         <script src="//genius.com/songs/' . $music . '/embed.js" crossorigin=""></script>
     </div>';
-
-
-
 ?>

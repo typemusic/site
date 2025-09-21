@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->execute();
 
         // Redireciona para o index
-        header("Location: ../index.php");
+        header("Location: pages/index.php");
         exit();
     } catch (PDOException $e) {
         echo "Erro ao inserir registro: " . $e->getMessage();

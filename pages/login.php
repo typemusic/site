@@ -42,7 +42,6 @@ if (count($_POST) > 0) {
         $_SESSION['dados_form'] = $_POST;
     } else {
         $_SESSION['dados_form'] = $_POST;
-        header("Location: ../servidor/criaUsuario.php");
         exit();
     }
 }
@@ -63,37 +62,21 @@ $dados = $_SESSION['dados_form'] ?? [];
 </head>
 
 <body>
-
     <header style="margin-left: 0; justify-content: center;">
         <div class="logo"></div>
     </header>
-    
+
     <div class="main-content" style="left: 10px;">
 
-        <div class="container-cadastro">
-            <form action="cadastro.php" method="POST" class="form-container">
-                <h1 style="text-align: center; font-size: 40px;">Cadastrar-se</h1>
-                <div class="input-container">
-                    <label for="nome"> Nome </label>
-                    <input type="text" name="nome" id="nome" value="<?= htmlspecialchars($dados['nome'] ?? '') ?>">
-                    <?php if (isset($erros['nome'])) : ?>
-                        <div class="text-danger"><?= $erros['nome'] ?></div>
-                    <?php endif; ?>
-                </div>
+        <div class="container-cadastro" style="margin: auto; border-radius: 20px;">
+            <form action="login.php" method="POST" class="form-container">
+                <h1 style="text-align: center; font-size: 40px;">Entrar</h1>
 
                 <div class="input-container">
                     <label for="email"> Email </label>
                     <input type="email" name="email" id="email" value="<?= htmlspecialchars($dados['email'] ?? '') ?>">
                     <?php if (isset($erros['email'])) : ?>
                         <div class="text-danger"><?= $erros['email'] ?></div>
-                    <?php endif; ?>
-                </div>
-
-                <div class="input-container">
-                    <label for="dataNascimento"> Data de Nascimento </label>
-                    <input type="date" name="dataNascimento" id="dataNascimento" value="<?= htmlspecialchars($dados['dataNascimento'] ?? '') ?>">
-                    <?php if (isset($erros['dataNascimento'])) : ?>
-                        <div class="text-danger"><?= $erros['dataNascimento'] ?></div>
                     <?php endif; ?>
                 </div>
 
@@ -105,37 +88,10 @@ $dados = $_SESSION['dados_form'] ?? [];
                     <?php endif; ?>
                 </div>
 
-                <div class="input-container">
-                    <label for="confirmarSenha"> Confirmar Senha </label>
-                    <input type="password" name="confirmarSenha" id="confirmarSenha">
-                    <?php if (isset($erros['confirmarSenha'])) : ?>
-                        <div class="text-danger"><?= $erros['confirmarSenha'] ?></div>
-                    <?php endif; ?>
-                </div>
-
-                <div>
-                    <p>Sexo</p>
-                    <div class="radio-options">
-                        <div>
-                            <input type="radio" id="Masculino" name="sexo" value="1" <?= (isset($dados['sexo']) && $dados['sexo'] == '1') ? 'checked' : '' ?>>
-                            <label for="Masculino"> Masculino </label>
-                        </div>
-
-                        <div>
-                            <input type="radio" id="Feminino" name="sexo" value="2" <?= (isset($dados['sexo']) && $dados['sexo'] == '2') ? 'checked' : '' ?>>
-                            <label for="Feminino"> Feminino </label>
-                        </div>
-                    </div>
-                    <?php if (isset($erros['sexo'])) : ?>
-                        <div class="text-danger"><?= $erros['sexo'] ?></div>
-                    <?php endif; ?>
-
-                </div>
-
                 <div class="submit-form-button">
                     <input type="submit" id="submit" value="Cadastrar">
                     <div>
-                        <p>Já tem uma conta?</p><a href="login.php">Entrar</a>
+                        <p>Não tem uma conta?</p><a href="cadastro.php">Cadastrar-se</a>
                     </div>
                 </div>
             </form>

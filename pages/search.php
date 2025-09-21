@@ -25,4 +25,5 @@
 </div>
 </body>
 <script src="../js/search.js"></script>
+<script src="js/theme.js"></script>
 </html>

@@ -21,35 +21,37 @@
     <section class="carousels">
       <h3>Recomendadas</h3>
       <div class="carousel-container">
-        <button class="btn prev">&#10094;</button>
+        <button class="button-carousel prev">&#10094;</button>
         <div class="carousel" id="carousel-recomendadas">
           <!-- As músicas recomendadas serão carregadas aqui -->
         </div>
-        <button class="btn next">&#10095;</button>
+        <button class="button-carousel next">&#10095;</button>
       </div>
 
       <h3>Mais Ouvidas</h3>
       <div class="carousel-container">
-        <button class="btn prev">&#10094;</button>
+        <button class="button-carousel prev">&#10094;</button>
         <div class="carousel" id="carousel-mais-ouvidas">
           <!-- As músicas mais ouvidas serão carregadas aqui -->
         </div>
-        <button class="btn next">&#10095;</button>
+        <button class="button-carousel next">&#10095;</button>
       </div>
 
       <h3>Mais Treinadas</h3>
       <div class="carousel-container">
-        <button class="btn prev">&#10094;</button>
+        <button class="button-carousel prev">&#10094;</button>
         <div class="carousel" id="carousel-mais-treinadas">
           <!-- As músicas mais treinadas serão carregadas aqui -->
         </div>
-        <button class="btn next">&#10095;</button>
+        <button class="button-carousel next">&#10095;</button>
       </div>
     </section>
     <?php include "../include/footer.php"; ?>
 
   </div>
+  <script src="js/index.js"></script>
+<script src="js/theme.js"></script>
+
 </body>
-<script src="js/index.js"></script>
 
 </html>

@@ -36,7 +36,7 @@ $music = isset($_GET['music']) ? htmlspecialchars($_GET['music']) : null;
 </body>
 
 <script src="../js/musicplayer.js"></script>
-
+<script src="js/theme.js"></script>
 </html>
 
 <?php

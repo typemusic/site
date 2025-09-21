@@ -1,13 +1,12 @@
 <header>
-  <img src="" alt="" id="logo">
+  <div class="logo"></div>
   <div class="search-container">
     <button id="search-button" type="submit">
       <span class="material-symbols-rounded">search</span>
     </button>
     <input type="text" id="query" placeholder="Buscar músicas..." required />
-
   </div>
-  <a href="cadastro.php" id="menuToggle"><img src="../img/user.png" alt="Perfil" /></a>
+  <a href="cadastro.php" id="menuToggle"><img src="../img/user.png" alt="Perfil" class="user-img" /></a>
 </header>
 
 <script>

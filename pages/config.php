@@ -21,7 +21,8 @@
         <button onclick="setTheme('auto')">Automático</button>
     </div>
 
+    <script src="js/theme.js"></script>
 </body>
-<script src="js/config.js"></script>
+
 
 </html>

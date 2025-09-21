@@ -11,7 +11,7 @@
         </a>
     </div>
 
-    <div class="select-icon" data-page="trophy.php">
+    <div class="select-icon" data-page="leaderboard.php">
         <a href="leaderboard.php">
             <span class="material-symbols-rounded">trophy</span>
         </a>
