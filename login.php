@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 require_once __DIR__ . '/servidor/connect.php';
 
@@ -38,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($usuario && password_verify($senha, $usuario['usrSenha'])) {
 
                 $_SESSION['usuario'] = [
-                    'id' => $usuario['usrId'],
+                    'id' => $usuario['IDusuario'],
                     'nome' => $usuario['usrNome'],
                     'email' => $usuario['usrEmail']
                 ];
@@ -101,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <br>
                 <input type="submit" id="submit" value="Entrar">
-                
+
                 <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px;">
                     <span>Não tem uma conta?</span>
                     <a href="cadastro.php"
