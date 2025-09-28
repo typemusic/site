@@ -20,14 +20,17 @@ $music = isset($_GET['music']) ? htmlspecialchars($_GET['music']) : null;
 
   <?php if ($music): ?>
     <div class="main-content">
-      <div class="lyrics-box" id="lyrics">
-        Carregando letra...
+      <div class="music-box">
+        <div class="lyrics-box" id="lyrics">
+          Carregando letra...
+        </div>
+        <div class="song-info" id="song-info">
+          Carregando informações...
+        </div>
       </div>
-      <div class="song-info" id="song-info">
-        Carregando informações...
-      </div>
-      <br>
+
       <?php include "../include/footer.php"; ?>
+      
     </div>
 
   <?php else: ?>
@@ -37,6 +40,7 @@ $music = isset($_GET['music']) ? htmlspecialchars($_GET['music']) : null;
 
 <script src="../js/musicplayer.js"></script>
 <script src="js/theme.js"></script>
+
 </html>
 
 <?php

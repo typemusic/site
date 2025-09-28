@@ -61,9 +61,14 @@ html[data-theme="light"] .main-content {
 html[data-theme="light"] .logo {
   background-image: url(img/logo_default.png);
   height: 100%;
-  width: 53px; 
+  width: 53px;
   background-size: cover;
 }
+
+html[data-theme="light"] .music-card-search {
+  background-color: var(--bg-light);
+}
+
 
 html[data-theme="dark"] body {
   background-color: var(--bg-dark);
@@ -88,8 +93,17 @@ html[data-theme="dark"] .main-content {
 html[data-theme="dark"] .logo {
   background-image: url(img/logo_white.png);
   height: 100%;
-  width: 53px; 
+  width: 53px;
   background-size: cover;
+}
+
+html[data-theme="dark"] .music-card-search {
+  background-color: var(--bg-dark);
+}
+
+html[data-theme="dark"] .music-card-search .title {
+  color: var(--text-dark);
+  font-weight: normal;
 }
 
 
@@ -115,11 +129,20 @@ html[data-theme="dark"] .logo {
   }
 
   html:not([data-theme]) .logo {
-  background-image: url(img/logo_white.png);
-  height: 100%;
-  width: 53px; 
-  background-size: cover;
-}
+    background-image: url(img/logo_white.png);
+    height: 100%;
+    width: 53px;
+    background-size: cover;
+  }
+
+  html:not([data-theme]) .music-card-search {
+    background-color: var(--bg-dark);
+  }
+
+  html:not([data-theme]) .music-card-search .title {
+    color: var(--text-dark);
+    font-weight: normal;
+  }
 
 }
 
@@ -141,11 +164,16 @@ html[data-theme="dark"] .logo {
   }
 
   html:not([data-theme]) .logo {
-  background-image: url(img/logo_default.png);
-  height: 100%;
-  width: 53px; 
-  background-size: cover;
-}
+    background-image: url(img/logo_default.png);
+    height: 100%;
+    width: 53px;
+    background-size: cover;
+  }
+
+  html:not([data-theme]) .music-card-search {
+    background-color: var(--bg-light-2);
+  }
+
 
 }
 
@@ -217,10 +245,24 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 45px;
+  height: 45px;
+
 }
 
 .select-icon a {
-  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+}
+
+.icon-svg {
+  width: 32px;
+  height: 32px;
+  fill: white;
+  transition: fill 0.3s;
 }
 
 .select-icon-true {
@@ -228,11 +270,9 @@ aside {
   border-radius: 100px;
 }
 
-.select-icon-true .material-symbols-rounded {
-  color: #7E26DC;
-  transition: color 0.3s;
+.select-icon-true .icon-svg {
+  fill: #7E26DC !important;
 }
-
 
 .fade-in {
   animation: fadeHighlight 0.6s ease-in-out;
@@ -248,7 +288,6 @@ aside {
   }
 }
 
-
 /*-------------
    searchBar.php
   ------------ */
@@ -262,7 +301,8 @@ header {
   align-items: center;
 }
 
-header a, .user-img {
+header a,
+.user-img {
   height: 100%;
   width: auto;
 }
@@ -270,7 +310,7 @@ header a, .user-img {
 .logo {
   background-image: url(img/logo_default.png);
   height: 100%;
-  width: 53px; 
+  width: 53px;
   background-size: cover;
 }
 
@@ -317,6 +357,7 @@ header a, .user-img {
   /*max-width: 100%;*/
   height: auto;
   display: block;
+  margin-bottom: 25px;
 }
 
 .banner-cadastro {
@@ -412,7 +453,7 @@ header a, .user-img {
   gap: 50px;
 }
 
-.main-content .grid-container {
+.main-content {
   display: flex;
   gap: 25px;
   overflow-wrap: break-word;
@@ -422,9 +463,9 @@ header a, .user-img {
   padding: 20px;
   display: flex;
   gap: 20px;
-  width: 50%;
-  margin-inline: auto;
-  margin-block: -25px;
+  min-width: 40%;
+  margin: auto;
+  border-radius: 20px;
   background-color: #7E26DC;
   color: #fff;
 }
@@ -450,7 +491,7 @@ input[type="submit"] {
 
 .form-container input[type="submit"]:hover {
   background-color: #6920b8;
-  border-color: var(--bg-light) ;
+  border-color: var(--bg-light);
 }
 
 .input-container {
@@ -460,7 +501,7 @@ input[type="submit"] {
 }
 
 .text-danger {
-  color: rgb(210, 0, 0);
+  color: var(--gray);
 }
 
 .div-imagem {
@@ -500,6 +541,166 @@ input[type="submit"] {
   color: var(--bg-light);
 }
 
+
+.music-card-search {
+  min-width: 150px;
+  max-width: 300px;
+  /* Ajuste para evitar que as cartas fiquem grandes demais */
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: 0 0px 6px rgb(0 0 0 / 15%);
+  flex-shrink: 0;
+  /* Garantir que os itens não encolham */
+  text-align: center;
+}
+
+.music-card-search:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 20%);
+  transition: all 0.1s ease-in-out;
+}
+
+
+.music-card-search img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.music-card-search p {
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  color: #333;
+}
+
+.music-card-search .title {
+  font-weight: bold;
+}
+
+.music-card-search .artist {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 0.4fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+}
+
+.background-user {
+  display: flex;
+  align-items: end;
+  min-height: 300px;
+  padding: 25px 75px;
+}
+
+.user {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  color: var(--text-dark);
+}
+
+.user #name {
+  font-size: 50px;
+}
+
+#situation {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  align-items: center;
+}
+
+.status-icon {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.online {
+  background-color: #4caf50;
+}
+
+.offline {
+  background-color: #f44336;
+}
+
+#situation p {
+  font-size: x-large;
+}
+
+.user img {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.user-data {
+  display: flex;
+  justify-content: space-around;
+}
+
+.music-box {
+  display: flex;
+  height: 100%;
+  gap: 25px;
+}
+
+.lyrics-box {
+  text-align: center;
+  white-space: pre-line;
+  line-height: 1.6;
+  word-wrap: break-word;
+  font-family: 'Courier New', monospace;
+  width: 70%;
+  padding: 1rem;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  display: grid;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.song-info img {
+  border-radius: 8px;
+}
+
+.song-info p {
+  font-size: 0.9rem;
+  color: gray;
+  text-align: center;
+}
+
+.start-button {
+  background-color: #7E26DC;
+  color: var(--text-dark) ;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+
+
 footer {
   background-color: #a57cff;
   color: rgb(0, 0, 0);
@@ -511,4 +712,65 @@ footer {
   z-index: 1;
   display: block;
   padding: 25px;
+  margin-top: 25px;
 }
+
+
+/*
+.carousel-container {
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.music-card {
+  min-width: 150px;
+  max-width: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: 0 0px 6px rgb(0 0 0 / 15%);
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.music-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0px 12px rgba(0, 0, 0, 20%);
+  transition: all 0.1s ease-in-out;
+}
+
+
+.music-card img {
+  width: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.music-card p {
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  color: #333;
+}
+
+.music-card .title {
+  font-weight: bold;
+}
+
+.music-card .artist {
+  font-size: 0.8rem;
+  color: gray;
+}
+*/

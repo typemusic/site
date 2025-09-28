@@ -9,7 +9,7 @@
   <link rel="icon" href="../img/favicon.png" type="image/png">
 </head>
 <body>
-  
+
   <?php include "../include/menu.php"; ?>
     <!-- O formulário continua utilizando nossa função JS para a busca -->
   <form onsubmit="searchMusic(event)">

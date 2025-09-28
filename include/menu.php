@@ -1,66 +1,75 @@
 <aside>
     <div class="select-icon" data-page="index.php">
         <a href="index.php">
-            <span class="material-symbols-rounded">home</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="icon-svg">
+                <path d="m8 2.3-5 5v6.2a.5.5 0 00.5.5h9a.5.5 0 00.5-.5V7.3zM14 7v6.5A1.5 1.5 0 0112.5 15h-9A1.5 1.5 0 012 13.5V7L7.3 1.5a1 1 0 011.4 0z" />
+            </svg>
+
         </a>
     </div>
 
     <div class="select-icon" data-page="search.php">
         <a href="search.php">
-            <span class="material-symbols-rounded">search</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="icon-svg">
+                <path d="M6.8759 10.9998a4.1248 4.1248 90 100-8.2497 4.1248 4.1248 90 000 8.2497M11.7508 6.8748a4.8748 4.8748 90 11-9.7497 0 4.8748 4.8748 90 019.7497 0m-1.9919 3.9314.0735.0862 2.8874 2.8873a.75.75 0 001.0612-1.0604l-2.8874-2.8873a.75.75 0 00-.0863-.0749 4.8748 4.8748 90 01-1.0485 1.05z" />
+            </svg>
         </a>
     </div>
 
     <div class="select-icon" data-page="leaderboard.php">
         <a href="leaderboard.php">
-            <span class="material-symbols-rounded">trophy</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="icon-svg">
+                <path d="M3.8551 2.3755A.3748.3748 90 014.2299 2.0007h7.4953a.3748.3748 90 01.3748.3748q0 .6049-.0255 1.1513a2.2485 2.2485 90 11-.8491 4.4147c-.5921 1.3979-1.4077 2.0815-2.1234 2.2568v1.6287l1.0681.2669c.1454.036.2826.1013.4025.1911L11.95 13.3186a.3748.3748 90 01-.2249.6746H4.2299a.3748.3748 90 01-.2249-.6746l1.3776-1.0336c.1199-.0899.257-.1551.4025-.1911L6.8533 11.827v-1.6287c-.7158-.1754-1.5313-.859-2.1234-2.2575a2.2485 2.2485 90 11-.8484-4.4147A24.7344 24.7344 90 013.8551 2.3755m.0742 1.9038a1.4991 1.4991 90 00.5397 2.9495c-.2496-.787-.4408-1.7585-.5397-2.9495m7.5575 2.9495a1.4991 1.4991 90 00.5397-2.9495c-.0996 1.1918-.2909 2.1625-.5397 2.9495M4.6077 2.7502q.0075.5809.042 1.101c.0975 1.5201.3426 2.6579.6521 3.4981C5.9493 9.1062 6.8412 9.496 7.2281 9.496a.3748.3748 90 01.3748.3748v1.9563a.7495.7495 90 01-.5674.727l-1.0689.2669a.3748.3748 90 00-.1342.0636L5.3542 13.2436h5.2467l-.4782-.359a.3748.3748 90 00-.1349-.0636l-1.0681-.2669a.7495.7495 90 01-.5674-.727V9.8707A.3748.3748 90 018.7271 9.496c.3868 0 1.2787-.3898 1.9263-2.1466.3096-.8395.5547-1.9788.6521-3.4981q.0338-.5201.042-1.101z" />
+            </svg>
         </a>
     </div>
 
     <div class="select-icon" data-page="config.php">
         <a href="config.php">
-            <span class="material-symbols-rounded">settings</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="icon-svg">
+                <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0" />
+                <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z" />
+            </svg>
         </a>
     </div>
 </aside>
 
 
 <script>
-document.querySelectorAll(".select-icon a").forEach(link => {
-    link.addEventListener("click", () => {
-        const parent = link.closest(".select-icon");
-        localStorage.setItem("lastClicked", parent.dataset.page);
+    document.querySelectorAll(".select-icon a").forEach(link => {
+        link.addEventListener("click", () => {
+            const parent = link.closest(".select-icon");
+            localStorage.setItem("lastClicked", parent.dataset.page);
+        });
     });
-});
 
-const currentPage = window.location.pathname.split("/").pop();
-const lastClicked = localStorage.getItem("lastClicked");
+    const currentPage = window.location.pathname.split("/").pop();
+    const lastClicked = localStorage.getItem("lastClicked");
 
-const icons = document.querySelectorAll(".select-icon");
-let matched = false;
+    const icons = document.querySelectorAll(".select-icon");
+    let matched = false;
 
-icons.forEach(icon => {
-    if (icon.dataset.page === currentPage) {
-        icon.classList.add("select-icon-true");
-        matched = true;
+    icons.forEach(icon => {
+        if (icon.dataset.page === currentPage) {
+            icon.classList.add("select-icon-true");
+            matched = true;
 
-        if (icon.dataset.page === lastClicked) {
-            icon.classList.add("fade-in");
-            localStorage.removeItem("lastClicked");
+            if (icon.dataset.page === lastClicked) {
+                icon.classList.add("fade-in");
+                localStorage.removeItem("lastClicked");
+            }
+        }
+    });
+
+    if (!matched && currentPage === "") {
+        const firstIcon = icons[0];
+        if (firstIcon) {
+            firstIcon.classList.add("select-icon-true");
+
+            if (firstIcon.dataset.page === lastClicked) {
+                firstIcon.classList.add("fade-in");
+                localStorage.removeItem("lastClicked");
+            }
         }
     }
-});
-
-if (!matched && currentPage === "") {
-    const firstIcon = icons[0];
-    if (firstIcon) {
-        firstIcon.classList.add("select-icon-true");
-
-        if (firstIcon.dataset.page === lastClicked) {
-            firstIcon.classList.add("fade-in");
-            localStorage.removeItem("lastClicked");
-        }
-    }
-}
-
 </script>
