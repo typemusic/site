@@ -39,7 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['usuario'] = [
                     'id' => $usuario['IDusuario'],
                     'nome' => $usuario['usrNome'],
-                    'email' => $usuario['usrEmail']
+                    'email' => $usuario['usrEmail'],
+                    'foto' => $usuario['usrPerfil'] ?? 'img/user.png'
                 ];
                 header("Location: index.php");
                 exit();
