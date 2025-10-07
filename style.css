@@ -106,6 +106,15 @@ html[data-theme="dark"] .music-card-search .title {
   font-weight: normal;
 }
 
+html[data-theme="dark"] .music-card {
+  background-color: var(--bg-dark);
+}
+
+html[data-theme="dark"] .music-card .title {
+  color: var(--text-dark);
+  font-weight: normal;
+}
+
 
 
 @media (prefers-color-scheme: dark) {
@@ -144,6 +153,15 @@ html[data-theme="dark"] .music-card-search .title {
     font-weight: normal;
   }
 
+    html:not([data-theme]) .music-card {
+    background-color: var(--bg-dark);
+  }
+
+  html:not([data-theme]) .music-card .title {
+    color: var(--text-dark);
+    font-weight: normal;
+  }
+
 }
 
 
@@ -171,6 +189,10 @@ html[data-theme="dark"] .music-card-search .title {
   }
 
   html:not([data-theme]) .music-card-search {
+    background-color: var(--bg-light-2);
+  }
+
+  html:not([data-theme]) .music-card {
     background-color: var(--bg-light-2);
   }
 
@@ -459,22 +481,16 @@ header a,
   overflow-wrap: break-word;
 }
 
-.container-cadastro {
-  padding: 20px;
-  display: flex;
-  gap: 20px;
-  min-width: 40%;
-  margin: auto;
-  border-radius: 20px;
-  background-color: #7E26DC;
-  color: #fff;
-}
 
 .form-container {
   display: flex;
   flex-direction: column;
+  padding: 20px;
+  min-width: 40%;
+  margin: -25px auto;
+  background-color: #7E26DC;
   gap: 20px;
-  width: 100%;
+  color: #fff;
 }
 
 .form-container button,
@@ -494,11 +510,12 @@ input[type="submit"] {
   border-color: var(--bg-light);
 }
 
-.input-container {
+.inputBox {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+
 
 .text-danger {
   color: var(--gray);
@@ -515,7 +532,7 @@ input[type="submit"] {
   gap: 20px;
 }
 
-.input-container input {
+.inputBox input {
   height: 30px;
   border-radius: 10px;
   border: none;
@@ -662,7 +679,7 @@ input[type="submit"] {
 .lyrics-box {
   text-align: center;
   white-space: pre-line;
-  line-height: 1.6;
+  line-height: 1;
   word-wrap: break-word;
   font-family: 'Courier New', monospace;
   width: 70%;

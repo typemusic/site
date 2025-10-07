@@ -12,7 +12,7 @@
       resultsDiv.innerHTML = '<p>Buscando...</p>';
 
       try {
-        const response = await fetch(`https://typemusic.hubsapiens.com.br/servidor/search.php?q=${encodeURIComponent(query)}`);
+        const response = await fetch(`/servidor/search.php?q=${encodeURIComponent(query)}`);
         const data = await response.json();
 
         if (!data.response || !data.response.hits.length) {

@@ -72,7 +72,7 @@
     e.preventDefault();
     const termo = document.getElementById('query').value.trim();
     if (termo !== "") {
-      window.location.href = `/search.php?q=${encodeURIComponent(termo)}`;
+      window.location.href = `https://typemusic.hubsapiens.com.br/search.php?q=${encodeURIComponent(termo)}`;
     }
   });
 
