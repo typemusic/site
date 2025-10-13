@@ -59,7 +59,6 @@ $dados = $_SESSION['dados_form'] ?? [];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 
 <body>
@@ -130,8 +129,10 @@ $dados = $_SESSION['dados_form'] ?? [];
             <?php endif; ?>
 
             <br>
+            <div class="submit-form-button">
             <input type="submit" id="submit" value="Cadastrar">
-
+            <div>Já tem uma conta? <a href="login.php">Entrar</a></div>
+            </div>
         </form>
     </div>
 

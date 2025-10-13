@@ -1,4 +1,6 @@
 <?php
+
+
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
@@ -7,6 +9,40 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 $usuario = $_SESSION['usuario'];
+
+if (isset($_FILES["foto"]) && $_FILES["foto"]["error"] === 0) {
+  $pastaUploads = "uploads/";
+  if (!is_dir($pastaUploads)) {
+    mkdir($pastaUploads, 0777, true);
+  }
+
+  $nomeArquivo = basename($_FILES["foto"]["name"]);
+  $destino = $pastaUploads . uniqid() . "-" . $nomeArquivo;
+
+  if (move_uploaded_file($_FILES["foto"]["tmp_name"], $destino)) {
+
+    $usuario["foto"] = $destino;
+    $_SESSION['usuario'] = $usuario;
+
+
+    require_once "servidor/connect.php";
+
+    $pdo = novaConexao();
+
+    $idUsuario = $usuario['id'];
+
+    $stmt = $pdo->prepare("UPDATE tblUsuario SET usrPerfil = :foto WHERE IDusuario = :id");
+    $stmt->execute(['foto' => $destino, 'id' => $idUsuario]);
+
+    $mensagem = "Upload realizado com sucesso!";
+  } else {
+    $mensagem = "Erro ao mover o arquivo!";
+  }
+}
+
+
+
+
 
 ?>
 
@@ -37,7 +73,7 @@ $usuario = $_SESSION['usuario'];
           <img id="img-user" src="<?= $usuario['foto'] ?? 'img/user.png' ?>" alt="Foto do usuário" />
 
           <!-- input escondido -->
-          <form id="form-foto" action="uploadFoto.php" method="POST" enctype="multipart/form-data">
+          <form id="form-foto" action="./perfil.php" method="POST" enctype="multipart/form-data">
             <input type="file" name="foto" id="input-foto" accept="image/*" style="display: none;">
           </form>
         </div>
@@ -71,15 +107,29 @@ $usuario = $_SESSION['usuario'];
     </div>
     <h2>Recentes</h2>
     <div class="recents-music-user">
-      
+
     </div>
 
     <?php include "include/footer.php"; ?>
 
   </div>
 
-  <script src="js/index.js"></script>
-  <script src="js/perfil.js"></script>
+  <script>
+    const imgUser = document.getElementById('img-user');
+    const inputFoto = document.getElementById('input-foto');
+    const formFoto = document.getElementById('form-foto');
+
+
+    imgUser.addEventListener('click', () => {
+      inputFoto.click();
+    });
+
+
+    inputFoto.addEventListener('change', () => {
+      formFoto.submit();
+    });
+  </script>
+
 </body>
 
 </html>

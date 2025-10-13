@@ -1,5 +1,7 @@
 <header>
+<a href="/">
   <div class="logo"></div>
+</a>
   <div class="search-container">
     <button id="search-button" type="submit">
       <span class="material-symbols-rounded">search</span>

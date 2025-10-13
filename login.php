@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/servidor/connect.php';
+require_once __DIR__ . '/servidor/conn.php';
 
 
 $erros = [];
@@ -65,8 +65,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body>
+  <header style="margin-left: 0; justify-content: center;">
+        <div class="logo"></div>    
+    </header>
+
+    <div class="main-content" style="left: 10px;">
+
 
     <div class="form-container">
+	<h1>Entrar</h1>
         <form action="login.php" method="post">
 
             <div class="inputBox">
@@ -106,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </form>
     </div>
+</div>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once('connect.php');
+require_once('conn.php');
 
 if (!isset($_SESSION['dados_form'])) {
     header("Location: cadastro.php");
@@ -37,7 +37,7 @@ try {
 
 
 
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 } catch (PDOException $e) {
     echo "Erro ao inserir registro: " . $e->getMessage();

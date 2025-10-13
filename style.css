@@ -491,6 +491,9 @@ header a,
   background-color: #7E26DC;
   gap: 20px;
   color: #fff;
+height: 100%;
+  justify-content: center;
+}
 }
 
 .form-container button,
@@ -674,6 +677,7 @@ input[type="submit"] {
   display: flex;
   height: 100%;
   gap: 25px;
+  justify-content: space-between;
 }
 
 .lyrics-box {
@@ -695,11 +699,13 @@ input[type="submit"] {
   flex-direction: column;
   gap: 0.8rem;
   border-radius: 10px;
-  width: 30%;
+  width: 25%;
+  height: 100vh;
 }
 
 .song-info img {
   border-radius: 8px;
+  width: 100%;
 }
 
 .song-info p {
@@ -715,6 +721,7 @@ input[type="submit"] {
   border-radius: 10px;
   border: none;
   font-size: 1rem;
+  width: 100%;
 }
 
 
@@ -791,3 +798,74 @@ footer {
   color: gray;
 }
 */
+
+/* Área do teste */
+#test-area {
+    display: none;
+    margin-top: 20px;
+}
+
+#expectedLyric {
+    font-size: 24px;
+    padding: 10px;
+    background: #9192D8;
+    border: 1px solid #7A7BBB;
+
+    color: white;
+    border-radius: 4px;
+    min-height: 50px;
+    margin-bottom: 10px;
+}
+
+#typingInput {
+    width: 100%;
+    max-width: 700px;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#progress,
+#message,
+#stats {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+button {
+    padding: 10px 16px;
+    background: #9192D8;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px auto;
+    font-size: 16px;
+    display: block;
+}
+
+button:hover {
+    background: #7A7BBB;
+}
+
+#menu {
+    display: block;
+    background-color: lightgray;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.highlight-letter {
+    color: rgb(82, 51, 153);
+    font-weight: bold;
+}
+
+#image-container {
+    display: none;
+}
+
+#image-container img {
+    width: 200px;
+    height: auto;
+}

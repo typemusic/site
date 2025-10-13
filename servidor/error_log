@@ -1,0 +1,10 @@
+[07-Oct-2025 18:24:43 America/Fortaleza] PHP Warning:  require_once(connect.php): Failed to open stream: No such file or directory in /home2/hubsap45/typemusic.hubsapiens.com.br/servidor/criaUsuario.php on line 3
+[07-Oct-2025 18:24:43 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'connect.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/hubsap45/typemusic.hubsapiens.com.br/servidor/criaUsuario.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/hubsap45/typemusic.hubsapiens.com.br/servidor/criaUsuario.php on line 3
+[07-Oct-2025 18:27:03 America/Fortaleza] PHP Warning:  require_once(connect.php): Failed to open stream: No such file or directory in /home2/hubsap45/typemusic.hubsapiens.com.br/servidor/criaUsuario.php on line 3
+[07-Oct-2025 18:27:03 America/Fortaleza] PHP Fatal error:  Uncaught Error: Failed opening required 'connect.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/hubsap45/typemusic.hubsapiens.com.br/servidor/criaUsuario.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/hubsap45/typemusic.hubsapiens.com.br/servidor/criaUsuario.php on line 3
